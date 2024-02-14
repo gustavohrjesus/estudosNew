@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fontawesome/all.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/png">
 </head>
 <body>
@@ -27,50 +29,60 @@
             <div class="col text-end">
                 <div class="d-flex justify-content-end">
                     <select id="select_filter" class="form-select w-50 me-3"> <!--  -ver tarefas -> filtro para escolher que tarefas queremos ver ( select )  -->
-                        <option value=""></option>
-                        <option value="">Filtro 01</option>
+                        <option value="all"></option>
+                        <option value="new">Nova tarefa</option>
+                        <option value="in progress">Tarefas em progresso</option>
+                        <option value="canceled">Cancelada</option>
+                        <option value="done">Concluídas</option>
                     </select>
-                    <a href="new_task.html" class="btn btn-primary"><i class="fa-solid fa-plus me-2"></i> Nova Tarefa</a><!--  -ver tarefas -> botao para adicionar tarefas  -->
+                    <!-- <a href="new_task.html" class="btn btn-primary"><i class="fa-solid fa-plus me-2"></i> Nova Tarefa</a> -ver tarefas -> botao para adicionar tarefas  -->
+                    <button class="btn btn-primary" id="btn_new_task"><i class="fa-solid fa-plus me-2"></i> Nova Tarefa</button>
                 </div>
             </div>
             <hr class="my-3">
+            <h4 class="m-0 p-0 text-info"><i class="fa-solid fa-user-tie me-2"></i><span id="username"></span></h4>
+            <hr class="my-3">
         </div>
 
-        <!-- aspecto visual de uma tarefa -->
-        <div class="row mb-3">
-            <div class="col-12 border border-primary rounded p-3 shadow">
-                <div class="row align-items-center">
-                    <div class="col-8">
-                        <div class="d-flex align-itens-center">
-                            <h5 class="me-3 text-info"><i class="fa-solid fa-circle-chevron-right"></i></h5>
-                            <h5>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                            </h5>
+        <div id="tasks_container">
+
+            <!-- aspecto visual de uma tarefa -->
+            <!-- <div class="row mb-3">
+                <div class="col-12 border border-primary rounded p-3 shadow">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <div class="d-flex align-itens-center">
+                                <h5 class="me-3 text-info"><i class="fa-solid fa-circle-chevron-right"></i></h5>
+                                <h5>
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                </h5>
+                            </div>
                         </div>
+                        <div class="col-2">
+                            <select id="task_status" class="form-select p-2">
+                                <option value="new">New</option>
+                                <option value="in progress">In progress</option>
+                                <option value="canceled">Canceled</option>
+                                <option value="done">Done</option>
+                            </select>
+                        </div>
+                        <div class="col-1 text-end"><i class="fa-regular fa-pen-to-square me-2"></i>Edit</div>
+                        <div class="col-1 text-end text-danger"><i class="fa-regular fa-trash-can me-2"></i>Delete</div>
                     </div>
-                    <div class="col-2">
-                        <select id="task_status" class="form-select p-2">
-                            <option value="new">New</option>
-                            <option value="in progress">In progress</option>
-                            <option value="canceled">Canceled</option>
-                            <option value="done">Done</option>
-                        </select>
-                    </div>
-                    <div class="col-1 text-end"><i class="fa-regular fa-pen-to-square me-2"></i>Edit</div>
-                    <div class="col-1 text-end text-danger"><i class="fa-regular fa-trash-can me-2"></i>Delete</div>
                 </div>
-            </div>
+            </div> -->
+            
         </div>
-
+        
         <!-- total tarefas -->
-        <div class="row" id="total_tasks">
+        <div class="row d-none" id="total_tasks">
             <div class="col">
-                <h4>Tarefas: <span class="text-info">4</span></h4>
+                <h4>Tarefas: <span class="text-info"></span></h4>
             </div>
         </div>
 
         <!-- sem tarefas -->
-        <div class="row" id="no_tasks">
+        <div class="row d-none" id="no_tasks">
             <div class="col text-center">
                 <span class="opacity-75">Não existem tarefas para apresentar</span>
             </div>
@@ -87,6 +99,7 @@
     </div>
     
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
 

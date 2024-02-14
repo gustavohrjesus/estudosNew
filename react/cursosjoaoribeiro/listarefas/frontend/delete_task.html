@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LISTA DE TAREFAS</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/all.min.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/png">
+</head>
+<body>
+
+    <div class="container my-5">
+
+        <!-- cabecalho -->
+        <div class="row mb-4">
+            <div class="col">
+                <div class="d-flex justify-content-start">
+                    <img src="assets/images/favicon.svg" alt="Logo" class="img-fluid me-3"  width="60px">
+                    <h1>Lista de Tarefas</h1> <!--  -ver tarefas -> titulo  -->
+                </div>
+            </div>            
+            <hr class="my-3">
+        </div>
+
+        <!-- espaço para criar nova tarefa -->
+        <div class="row">
+            <div class="col">
+                <h3>Eliminar Tarefa</h3>
+                <h2 class="text-center text-info mb-3" id="task_text">[texto]</h2>
+                <h4 class="text-center mb-5" id="task_status">[status]</h4>
+                <div class="text-center">
+                    <a href="index.html" class="btn btn-secondary">Cancelar</a>
+                    <button class="btn btn-primary" id="btn_eliminar">Excluir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="row mt-3">
+            <div class="col text-center">
+                <hr>
+                <p>Lista de tarefas &copy; 2023</p>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/delete_task.js"></script> <!-- FULLSTACK #023 -->
+</body>
+</html>

@@ -1,0 +1,73 @@
+[react-siscrud]
+
+		[client]								[server]	
+[public]	[src]									.env
+			[assets]							.gitgnore
+				[css]							- index.js
+					- bootstrap.min.css
+
+				[images]
+					- catraca_01.png
+					- catraca_02.png
+					- favicon_blackColor.ico
+					- favicon.svg
+
+				[js]
+					- bootstrap.bundle.min.js
+				
+			[components]
+				[header]
+					- Header.css
+					- Header.jsx
+				
+			[contexts]
+				- auth.jsx
+				
+			[pages]
+				[HomePage]
+					- index.css
+					- index.jsx
+
+				[LoginPage]
+					- index.css
+					- index.jsx
+
+				[RegisterPage]
+					- index.css
+					- index.jsx
+						
+			[services]
+				- api.js
+
+			- App.jsx	
+			- AppRoutes.jsx	
+			- index.css	
+			- index.js
+
+
+FLUXO LOGIN
+[client]
+   |-----> [src]
+   |	     |-----> - index.js (imports React, ReactDOM, index.css, bootstrap.min.css, App)
+   |	     |		|-----> - App.jsx (imports AppRoutes)
+   |	     |			   |-----> - AppRoutes.jsx (imports React,{useContext}, 
+   |	     |					|			{BrowserRouter, Route, Routes, Navigate}, 
+   |	     |					|			LoginPage, HomePage, RegisterPage, 
+   |	     |					|			{AuthProvider, AuthContext} )
+   |	     |					|
+   |	     |-----> [contexts] ---------------	|-----> - auth.jsx (imports React,{useState, useEffect, createContext},
+   |	     |		|				    |		{useNavigate},
+   |	     |		|				    |		{api,createSession} from "../services/api" )
+   |	     |		|				    |
+   |	     |----------|-----> [services] ---------------- |-----> api.js (imports axios)
+   |	     |							      |
+   |	     |							      |
+   |	     |							      |
+   |	     |--------------------------------------------------------|
+[server]							      |
+   |------------------------------------------------------------------|-----> index.js (require dotenv, express, mysql, cors, bcrypt, jsonwebtoken)
+
+
+
+
+	   
